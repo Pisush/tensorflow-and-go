@@ -6,7 +6,7 @@ CONTAINER_NAME := tensorflow-and-go
 DOCKER_IMAGE := dahernan/tensorflow-and-go
 
 login:
-	docker run -i -v $(DIR) -w $(WDIR) --entrypoint=/bin/bash --name $(CONTAINER_NAME) -t $(DOCKER_IMAGE)
+	docker run -i -v $(DIR) -w $(WDIR) --entrypoint=/bin/bash -t $(DOCKER_IMAGE)
 
 dockerbuild:
 	docker build -f Dockerfile -t $(DOCKER_IMAGE) .
