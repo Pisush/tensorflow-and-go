@@ -24,11 +24,18 @@ func captchaToText(path string, savedModel *tf.SavedModel, printLogs bool) strin
 
 	// Define the Output struct that will be fed in the model:
 	// the operation here is providing the input image as bytes of the prediction node, the index is 0
+
 	feedsOutput := tf.Output{
 		//...
 	}
 
-	// Define the input Tensor: the string versino of the CAPTCHA
+	// here just for the template to run - delete me
+	nilOutput := tf.Output{}
+	if feedsOutput != nilOutput {
+		lof.Fatal(err)
+	}
+	
+	// Define the input Tensor: the string version of the CAPTCHA
 	//...
 
 	// Set a map from the operation we will apply to the input it will be applied on
@@ -63,7 +70,7 @@ func main() {
 	// Creates a new SavedModel by loading a model previously exported to a directory on disk
 	// the tag is "serve", no special options
 
-	var s captchaText
+	var captchaText string
 	// captchaText = captchaToText(inputImage, savedModel, *printLogs)
 	fmt.Println(captchaText)
 }
