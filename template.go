@@ -63,6 +63,7 @@ func main() {
 	// Creates a new SavedModel by loading a model previously exported to a directory on disk
 	// the tag is "serve", no special options
 
-	captchaText := captchaToText(inputImage, savedModel, *printLogs)
+	var s captchaText
+	// captchaText = captchaToText(inputImage, savedModel, *printLogs)
 	fmt.Println(captchaText)
 }
